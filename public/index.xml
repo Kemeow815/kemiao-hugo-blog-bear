@@ -7,7 +7,7 @@
     <generator>Hugo</generator>
     <language>zh-CN</language>
     <copyright>Copyright © 2025, Ke Miao.</copyright>
-    <lastBuildDate>Tue, 24 Jun 2025 20:15:00 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 24 Jun 2025 21:15:00 +0800</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Friends</title>
@@ -15,6 +15,13 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/friends/</guid>
       <description>&lt;div class=&#34;friend-links&#34; style=&#34;display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; margin: 3rem 0;&#34;&gt;&#xD;&#xA;&lt;!-- 示例友链1 --&gt;&#xD;&#xA;&lt;div class=&#34;friend-card&#34; style=&#34;border: 1px solid #eaeaea; border-radius: 8px; padding: 1.5rem; transition: all 0.3s;&#34;&gt;&#xD;&#xA;  &lt;div style=&#34;display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;&#34;&gt;&#xD;&#xA;    &lt;img src=&#34;https://www.zhilu.cyou/api/avatar.png&#34; alt=&#34;纸鹿摸鱼处&#34; style=&#34;width: 50px; height: 50px; border-radius: 50%; object-fit: cover;&#34;&gt;&#xD;&#xA;    &lt;h3 style=&#34;margin: 0;&#34;&gt;&lt;a href=&#34;https://blog.zhilu.cyou/&#34; target=&#34;_blank&#34; style=&#34;text-decoration: none; color: #2563eb;&#34;&gt;纸鹿摸鱼处&lt;/a&gt;&lt;/h3&gt;&#xD;&#xA;  &lt;/div&gt;&#xD;&#xA;  &lt;p style=&#34;margin: 0; color: #4b5563;&#34;&gt;纸鹿至麓不知路，支炉制露不止漉&lt;/p&gt;&#xD;&#xA;&lt;/div&gt;&#xD;&#xA;&lt;!-- 示例友链2 --&gt;&#xD;&#xA;&lt;div class=&#34;friend-card&#34; style=&#34;border: 1px solid #eaeaea; border-radius: 8px; padding: 1.5rem; transition: all 0.3s;&#34;&gt;&#xD;&#xA;  &lt;div style=&#34;display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;&#34;&gt;&#xD;&#xA;    &lt;img src=&#34;https://img.zhheo.com/i/67d8fa75943e4.webp&#34; alt=&#34;张洪Heo&#34; style=&#34;width: 50px; height: 50px; border-radius: 50%; object-fit: cover;&#34;&gt;&#xD;&#xA;    &lt;h3 style=&#34;margin: 0;&#34;&gt;&lt;a href=&#34;https://blog.zhheo.com/&#34; target=&#34;_blank&#34; style=&#34;text-decoration: none; color: #2563eb;&#34;&gt;张洪Heo&lt;/a&gt;&lt;/h3&gt;&#xD;&#xA;  &lt;/div&gt;&#xD;&#xA;  &lt;p style=&#34;margin: 0; color: #4b5563;&#34;&gt;分享设计与科技生活&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>测试视频</title>
+      <link>http://localhost:1313/microblogs/2025-06-24-cs/</link>
+      <pubDate>Tue, 24 Jun 2025 21:15:00 +0800</pubDate>
+      <guid>http://localhost:1313/microblogs/2025-06-24-cs/</guid>
+      <description>&lt;p&gt;测试视频&lt;/p&gt;&#xA;&lt;iframe src=&#34;//player.bilibili.com/player.html?isOutside=true&amp;aid=603711299&amp;bvid=BV1pB4y1E7fp&amp;cid=851182849&amp;p=1&#34; scrolling=&#34;no&#34; border=&#34;0&#34; frameborder=&#34;no&#34; framespacing=&#34;0&#34; allowfullscreen=&#34;true&#34;&gt; &lt;/iframe&gt;</description>
     </item>
     <item>
       <title>期末考试考英语</title>
