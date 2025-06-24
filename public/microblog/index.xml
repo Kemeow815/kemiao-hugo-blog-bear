@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>microblog on 喵落阁</title>
+    <link>http://localhost:1313/microblog/</link>
+    <description>Recent content in microblog on 喵落阁</description>
+    <generator>Hugo</generator>
+    <language>zh-CN</language>
+    <copyright>Copyright © 2025, Ke Miao.</copyright>
+    <lastBuildDate>Fri, 03 Jan 2020 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/microblog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Markdown Syntax Guide</title>
+      <link>http://localhost:1313/microblog/cs/</link>
+      <pubDate>Fri, 03 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/microblog/cs/</guid>
+      <description>&lt;p&gt;今天在转角发现这家宝藏咖啡馆，他们的手冲咖啡太棒了！推荐埃塞俄比亚豆子～&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

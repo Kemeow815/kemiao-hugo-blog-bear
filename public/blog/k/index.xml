@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>K on 喵落阁</title>
+    <link>http://localhost:1313/blog/k/</link>
+    <description>Recent content in K on 喵落阁</description>
+    <generator>Hugo</generator>
+    <language>zh-CN</language>
+    <copyright>Copyright © 2025, Ke Miao.</copyright>
+    <lastBuildDate>Tue, 24 Jun 2025 20:15:00 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/blog/k/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>期末考试考英语</title>
+      <link>http://localhost:1313/microblogs/2025-06-24-hello/</link>
+      <pubDate>Tue, 24 Jun 2025 20:15:00 +0800</pubDate>
+      <guid>http://localhost:1313/microblogs/2025-06-24-hello/</guid>
+      <description>&lt;p&gt;今天发现了一家超棒的咖啡馆！他们的手冲咖啡太惊艳了。强烈推荐给咖啡爱好者。&lt;/p&gt;&#xA;&lt;p&gt;#咖啡 #探店&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

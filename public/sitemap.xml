@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://example.com/</loc>
+    <lastmod>2025-06-24T20:15:00+08:00</lastmod>
+  </url><url>
+    <loc>https://example.com/friends/</loc>
+  </url><url>
+    <loc>https://example.com/microblogs/</loc>
+    <lastmod>2025-06-24T20:15:00+08:00</lastmod>
+  </url><url>
+    <loc>https://example.com/blog/</loc>
+    <lastmod>2020-01-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://example.com/blog/blog/</loc>
+    <lastmod>2025-06-24T20:15:00+08:00</lastmod>
+  </url><url>
+    <loc>https://example.com/microblogs/2025-06-24-hello/</loc>
+    <lastmod>2025-06-24T20:15:00+08:00</lastmod>
+  </url><url>
+    <loc>https://example.com/blog/%E8%80%83%E8%AF%95/</loc>
+    <lastmod>2025-06-24T20:15:00+08:00</lastmod>
+  </url><url>
+    <loc>https://example.com/blog/%E8%8B%B1%E8%AF%AD/</loc>
+    <lastmod>2025-06-24T20:15:00+08:00</lastmod>
+  </url><url>
+    <loc>https://example.com/blog/markdown/</loc>
+    <lastmod>2020-01-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://example.com/markdown-syntax-guide/</loc>
+    <lastmod>2020-01-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://example.com/blog/syntax/</loc>
+    <lastmod>2020-01-03T00:00:00+00:00</lastmod>
+  </url>
+</urlset>

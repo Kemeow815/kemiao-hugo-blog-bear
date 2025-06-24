@@ -1,0 +1,28 @@
+/* 微博客样式 */
+.microblog {
+    display: flex;
+    margin: 1rem 0;
+    padding: 1rem;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .microblog .metadata {
+    min-width: 80px;
+    color: #666;
+  }
+  
+  .microblog .emoji {
+    font-size: 1.5em;
+  }
+  
+  .microblog-image {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-top: 10px;
+  }
+  
+  .day-group h2 {
+    color: #333;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 5px;
+  }

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blog on 喵落阁</title>
+    <link>https://example.com/blog/blog/</link>
+    <description>Recent content in Blog on 喵落阁</description>
+    <generator>Hugo</generator>
+    <language>zh-CN</language>
+    <copyright>Copyright © 2025, Ke Miao.</copyright>
+    <lastBuildDate>Tue, 24 Jun 2025 20:15:00 +0800</lastBuildDate>
+    <atom:link href="https://example.com/blog/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>期末考试考英语</title>
+      <link>https://example.com/microblogs/2025-06-24-hello/</link>
+      <pubDate>Tue, 24 Jun 2025 20:15:00 +0800</pubDate>
+      <guid>https://example.com/microblogs/2025-06-24-hello/</guid>
+      <description>&lt;p&gt;中午sb的violent，寄喽。。。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
