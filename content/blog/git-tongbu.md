@@ -2,7 +2,7 @@
 title = "Git 同步上游仓库的更新"
 description = "同步上游仓库的更新，保持本地仓库与远程仓库的一致性。"
 date = "2025-04-04"
-tags = ["Git教程", 同步"]
+tags = ["Git教程", "同步"]
 +++
 
 ## Git 同步上游仓库的更新
@@ -15,7 +15,7 @@ tags = ["Git教程", 同步"]
 
 　　给上游仓库取个名字，如果将命名为 `upstream`​ ，可以在本地仓库中运行以下命令：
 
-```sh
+```
 git remote add upstream https://github.com/$<upstream-repo>.git
 ```
 
@@ -23,7 +23,7 @@ git remote add upstream https://github.com/$<upstream-repo>.git
 
 　　运行以下命令以获取上游仓库中的所有分支和提交：
 
-```sh
+```
 git fetch upstream
 ```
 
@@ -31,19 +31,19 @@ git fetch upstream
 
 　　现在，将上游 main 分支的更改合并到您的本地 main 分支：
 
-```sh
+```
 git merge upstream/main --allow-unrelated-histories
 ```
 
 　　如果只需要合并特定的 commit ：
 
-```sh
+```
 git cherry-pick <commit-hash>
 ```
 
 　　也可以使用
 
-```sh
+```
 gcp <commit-hash>
 ```
 
@@ -53,13 +53,13 @@ gcp <commit-hash>
 
 　　当然这很不优雅，可以使用下面的命令获取更改到文件，但是不会提交 commit ，
 
-```sh
+```
 git cherry-pick <commit-hash> --no-commit
 ```
 
 　　然后手动提交一下
 
-```sh
+```
 git commit -m "commit information"
 ```
 
@@ -70,13 +70,13 @@ Git 也会进行提示，手动编辑冲突文件并保存，然后再提交更�
 
 ### 批量提交
 
-```sh
+```
 git cherry-pick <起始提交>^..<结束提交>
 ```
 
 　　如果有冲突会按照顺序处理，然后执行， continue 直到结束
 
-```sh
+```
 git cherry-pick --continue
 ```
 
@@ -87,7 +87,7 @@ git cherry-pick --continue
 
 ### 推送
 
-```sh
+```
 git push origin main
 ```
 
@@ -95,6 +95,6 @@ git push origin main
 
 　　如果不再需要同步，可以删除上游的仓库
 
-```sh
+```
 git remote remove upstream
 ```
