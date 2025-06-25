@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="http://localhost:1313/images/favicon.png" />
+<title>Waline评论在Vercel部署 | 喵落阁</title>
+<meta name="title" content="Waline评论在Vercel部署" />
+<meta name="description" content="使用Waline评论我喜欢使用的部署方法(个人认为最简便)。" />
+<meta name="keywords" content="Waline评论系统,Vercel," />
+
+
+<meta property="og:url" content="http://localhost:1313/waline%E8%AF%84%E8%AE%BA%E5%9C%A8vercel%E9%83%A8%E7%BD%B2/">
+  <meta property="og:site_name" content="喵落阁">
+  <meta property="og:title" content="Waline评论在Vercel部署">
+  <meta property="og:description" content="使用Waline评论我喜欢使用的部署方法(个人认为最简便)。">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="blog">
+    <meta property="article:published_time" content="2025-04-14T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-04-14T00:00:00+00:00">
+    <meta property="article:tag" content="Waline评论系统">
+    <meta property="article:tag" content="Vercel">
+    <meta property="og:image" content="http://localhost:1313/images/share.png">
+
+
+
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="http://localhost:1313/images/share.png">
+  <meta name="twitter:title" content="Waline评论在Vercel部署">
+  <meta name="twitter:description" content="使用Waline评论我喜欢使用的部署方法(个人认为最简便)。">
+
+
+
+
+  <meta itemprop="name" content="Waline评论在Vercel部署">
+  <meta itemprop="description" content="使用Waline评论我喜欢使用的部署方法(个人认为最简便)。">
+  <meta itemprop="datePublished" content="2025-04-14T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2025-04-14T00:00:00+00:00">
+  <meta itemprop="wordCount" content="199">
+  <meta itemprop="image" content="http://localhost:1313/images/share.png">
+  <meta itemprop="keywords" content="Waline评论系统,Vercel">
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  <style>
+  :root {
+    --width: 720px;
+    --font-main: Verdana, sans-serif;
+    --font-secondary: Verdana, sans-serif;
+    --font-scale: 1em;
+    --background-color: #fff;
+    --heading-color: #222;
+    --text-color: #444;
+    --link-color: #3273dc;
+    --visited-color: #8b6fcb;
+    --code-background-color: #f2f2f2;
+    --code-color: #222;
+    --blockquote-color: #222;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --background-color: #01242e;
+      --heading-color: #eee;
+      --text-color: #ddd;
+      --link-color: #8cc2dd;
+      --visited-color: #8b6fcb;
+      --code-background-color: #000;
+      --code-color: #ddd;
+      --blockquote-color: #ccc;
+    }
+  }
+
+  body {
+    font-family: var(--font-secondary);
+    font-size: var(--font-scale);
+    margin: auto;
+    padding: 20px;
+    max-width: var(--width);
+    text-align: left;
+    background-color: var(--background-color);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+    color: var(--text-color);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-main);
+    color: var(--heading-color);
+  }
+
+  a {
+    color: var(--link-color);
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  nav a {
+    margin-right: 8px;
+  }
+
+  strong,
+  b {
+    color: var(--heading-color);
+  }
+
+  button {
+    margin: 0;
+    cursor: pointer;
+  }
+
+  time {
+    font-family: monospace;
+    font-style: normal;
+    font-size: 15px;
+  }
+
+  main {
+    line-height: 1.6;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  hr {
+    border: 0;
+    border-top: 1px dashed;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  code {
+    font-family: monospace;
+    padding: 2px;
+    background-color: var(--code-background-color);
+    color: var(--code-color);
+    border-radius: 3px;
+  }
+
+  blockquote {
+    border-left: 1px solid #999;
+    color: var(--code-color);
+    padding-left: 20px;
+    font-style: italic;
+  }
+
+  footer {
+    padding: 25px 0;
+    text-align: center;
+  }
+
+  .title:hover {
+    text-decoration: none;
+  }
+
+  .title h1 {
+    font-size: 1.5em;
+  }
+
+  .inline {
+    width: auto !important;
+  }
+
+  .highlight,
+  .code {
+    padding: 1px 15px;
+    background-color: var(--code-background-color);
+    color: var(--code-color);
+    border-radius: 3px;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    overflow-x: auto;
+  }
+
+   
+  ul.blog-posts {
+    list-style-type: none;
+    padding: unset;
+  }
+
+  ul.blog-posts li {
+    display: flex;
+  }
+
+  ul.blog-posts li span {
+    flex: 0 0 130px;
+  }
+
+  ul.blog-posts li a:visited {
+    color: var(--visited-color);
+  }
+
+</style>
+
+</head>
+
+<body>
+  <header><a href="/" class="title">
+  <h2>喵落阁</h2>
+</a>
+<nav>
+<a href="/">Home</a>
+
+<a href="/friends/">Friends</a>
+
+<a href="/microblogs/">microblogs</a>
+
+<a href="/blog/">Blog</a>
+
+</nav>
+</header>
+  <main>
+
+<h1>Waline评论在Vercel部署</h1>
+<p>
+  <i>
+    <time datetime='2025-04-14'>
+      14 Apr, 2025
+    </time>
+  </i>
+</p>
+
+<content>
+  <blockquote>
+<p>使用Waline评论我喜欢使用的部署方法(个人认为最简便)</p></blockquote>
+<h2 id="所需账号">所需账号</h2>
+<ol>
+<li>一个Github账号</li>
+<li>一个Vercel账号</li>
+<li>一个leancloud账号(最好是国际服的，你有了Github难道还用大陆的吗？大陆的要备案，故在这里不阐述，末尾放原文链接)</li>
+</ol>
+<hr>
+<h2 id="在-leancloud-里创建数据库">在 leancloud 里创建数据库</h2>
+<ol>
+<li>
+<p><a href="https://console.leancloud.app/login">登录</a> 或 <a href="https://console.leancloud.app/register">注册</a> <code>LeanCloud 国际版</code> 并进入 <a href="https://console.leancloud.app/apps">控制台</a></p>
+</li>
+<li>
+<p>点击左上角 <a href="https://console.leancloud.app/apps">创建应用</a> 并起一个你喜欢的名字 (请选择免费的开发版):</p>
+<p><img src="https://s2.loli.net/2025/04/14/7FOYbvS8MlQXe52.png" alt="创建应用"></p>
+</li>
+<li>
+<p>进入应用，选择左下角的 <code>设置</code> &gt; <code>应用 Key</code>。你可以看到你的 <code>APP ID</code>,<code>APP Key</code> 和 <code>Master Key</code>。请记录它们，以便后续使用。</p>
+<p><img src="https://s2.loli.net/2025/04/14/c1Vltvsm8GYXSbf.png" alt="ID 和 Key"></p>
+</li>
+</ol>
+<hr>
+<h2 id="在-vercel-部署">在 Vercel 部署</h2>
+<p><a href="https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fwalinejs%2Fwaline%2Ftree%2Fmain%2Fexample"><img src="https://cdn.jsdelivr.net/gh/kmfx/tuchuang@main/img/vercel.svg" alt="Vercel"></a></p>
+<ol>
+<li>
+<p>点击上方按钮，跳转至 Vercel 进行 Server 端部署。</p>
+<p>如果你未登录的话，Vercel 会让你注册或登录，请使用 GitHub 账户进行快捷登录。</p>
+</li>
+<li>
+<p>输入一个你喜欢的 Vercel 项目名称并点击 <code>Create</code> 继续:</p>
+<p><img src="https://s2.loli.net/2025/04/14/XauJLO7hfcWVx2Y.png" alt="创建项目"></p>
+</li>
+<li>
+<p>此时 Vercel 会基于 Waline 模板帮助你新建并初始化仓库，仓库名为你之前输入的项目名。</p>
+<p><img src="https://s2.loli.net/2025/04/14/Q7tExaML3XKlf12.png" alt="deploy"></p>
+<p>一两分钟后，满屏的烟花会庆祝你部署成功。此时点击 <code>Go to Dashboard</code> 可以跳转到应用的控制台。</p>
+<p><img src="https://s2.loli.net/2025/04/14/HqfvwV6GdrFROSZ.png" alt="deploy"></p>
+</li>
+<li>
+<p>点击顶部的 <code>Settings</code> - <code>Environment Variables</code> 进入环境变量配置页，并配置三个环境变量 <code>LEAN_ID</code>, <code>LEAN_KEY</code> 和 <code>LEAN_MASTER_KEY</code> 。它们的值分别对应上一步在 LeanCloud 中获得的 <code>APP ID</code>, <code>APP KEY</code>, <code>Master Key</code>。</p>
+<p><img src="https://s2.loli.net/2025/04/14/9laMFio1umnjB6g.png" alt="设置环境变量"></p>
+</li>
+<li>
+<p>环境变量配置完成之后点击顶部的 <code>Deployments</code> 点击顶部最新的一次部署右侧的 <code>Redeploy</code> 按钮进行重新部署。该步骤是为了让刚才设置的环境变量生效。</p>
+<p><img src="https://s2.loli.net/2025/04/14/WkVxeRub73aIHBX.png" alt="redeploy"></p>
+</li>
+<li>
+<p>此时会跳转到 <code>Overview</code> 界面开始部署，等待片刻后 <code>STATUS</code> 会变成 <code>Ready</code>。此时请点击 <code>Visit</code> ，即可跳转到部署好的网站地址，此地址即为你的服务端地址。</p>
+<p><img src="https://s2.loli.net/2025/04/14/xM8rEezGTqFQNCY.png" alt="redeploy success"></p>
+</li>
+</ol>
+<h2 id="绑定域名-可选">绑定域名 (可选)</h2>
+<ol>
+<li>
+<p>点击顶部的 <code>Settings</code> - <code>Domains</code> 进入域名配置页</p>
+</li>
+<li>
+<p>输入需要绑定的域名并点击 <code>Add</code></p>
+<p><img src="https://s2.loli.net/2025/04/14/9wHyLEWQOtvz1fA.png" alt="Add domain"></p>
+</li>
+<li>
+<p>在域名服务器商处添加新的 <code>CNAME</code> 解析记录</p>
+<table>
+  <thead>
+      <tr>
+          <th>Type</th>
+          <th>Name</th>
+          <th>Value</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>CNAME</td>
+          <td>example</td>
+          <td>cname.vercel-dns.com(国区的可用 cname-china.vercel-dns.com)</td>
+      </tr>
+  </tbody>
+</table>
+</li>
+<li>
+<p>等待生效，你可以通过自己的域名来访问了。</p>
+<ul>
+<li>评论系统：example.yourdomain.com</li>
+<li>评论管理：example.yourdomain.com/ui</li>
+</ul>
+<p><img src="https://s2.loli.net/2025/04/14/4BOxqfs16erKTMV.png" alt="success"></p>
+</li>
+</ol>
+<h2 id="html-引入-客户端">HTML 引入 (客户端)</h2>
+<p>在你的网页中进行如下设置:</p>
+<ol>
+<li>
+<p>导入 Waline 样式 <code>https://unpkg.com/@waline/client@v3/dist/waline.css</code>。</p>
+</li>
+<li>
+<p>创建 <code>&lt;script&gt;</code> 标签使用来自 <code>https://unpkg.com/@waline/client@v3/dist/waline.js</code> 的 <code>init()</code> 函数初始化，并传入必要的 <code>el</code> 与 <code>serverURL</code> 选项。</p>
+<ul>
+<li><code>el</code> 选项是 Waline 渲染使用的元素，你可以设置一个字符串形式的 CSS 选择器或者一个 HTMLElement 对象。</li>
+<li><code>serverURL</code> 是服务端的地址，即上一步获取到的值。</li>
+</ul>
+<pre tabindex="0"><code>&lt;head&gt;
+  &lt;!-- ... --&gt;
+  &lt;link
+    rel=&#34;stylesheet&#34;
+    href=&#34;https://unpkg.com/@waline/client@v3/dist/waline.css&#34;
+  /&gt;
+  &lt;!-- ... --&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;!-- ... --&gt;
+  &lt;div id=&#34;waline&#34;&gt;&lt;/div&gt;
+  &lt;script type=&#34;module&#34;&gt;
+    import { init } from &#39;https://unpkg.com/@waline/client@v3/dist/waline.js&#39;;
+
+    init({
+      el: &#39;#waline&#39;,
+      serverURL: &#39;https://your-domain.vercel.app&#39;,
+    });
+  &lt;/script&gt;
+&lt;/body&gt;
+</code></pre></li>
+<li>
+<p>评论服务此时就会在你的网站上成功运行。</p>
+</li>
+</ol>
+<h2 id="评论管理-管理端">评论管理 (管理端)</h2>
+<ol>
+<li>部署完成后，请访问 <code>&lt;serverURL&gt;/ui/register</code> 进行注册。首个注册的人会被设定成管理员。</li>
+<li>管理员登陆后，即可看到评论管理界面。在这里可以修改、标记或删除评论。</li>
+<li>用户也可通过评论框注册账号，登陆后会跳转到自己的档案页。</li>
+</ol>
+<h2 id="视频教程">视频教程</h2>
+<p>以下是热心用户制作的视频教程，以上操作不清楚的也可以参考一二。</p>
+<h3 id="waline-部署教程快速上手">Waline 部署教程（快速上手）</h3>
+<blockquote>
+<p>UP 主：<a href="https://space.bilibili.com/381992209">rickroll 摇</a></p></blockquote>
+<iframe src="//player.bilibili.com/player.html?isOutside=true&aid=603711299&bvid=BV1pB4y1E7fp&cid=851182849&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+<h3 id="使用-vercel-简单地部署-waline-评论系统">使用 Vercel 简单地部署 Waline 评论系统</h3>
+<blockquote>
+<p>UP 主：<a href="https://space.bilibili.com/355877984">岚天呀</a></p></blockquote>
+<iframe src="//player.bilibili.com/player.html?isOutside=true&aid=986143204&bvid=BV1Ft4y1A73f&cid=851363812&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+<hr>
+<h2 id="以上为部分修改原文">以上为部分修改原文</h2>
+<p>原文链接: <a href="https://waline.js.org/guide/get-started/">https://waline.js.org/guide/get-started/</a></p>
+
+  <script src="https://giscus.app/client.js"
+        data-repo="Kemeow815/kemiao-hugo-blog-bear"
+        data-repo-id="R_kgDOPBCS9A"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOPBCS9M4Cr7KS"
+        data-mapping="title"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="preferred_color_scheme"
+        data-lang="zh-CN"
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async>
+</script>
+
+<script>
+    function loadGiscus() {
+      const theme = localStorage.getItem('theme') === 'dark' ? 'dark' : 'light';
+      const giscus = document.createElement('script');
+      giscus.setAttribute('data-theme', theme);
+      
+    }
+    window.addEventListener('DOMContentLoaded', loadGiscus);
+  </script> 
+</content>
+<p>
+  
+  <a href="http://localhost:1313/blog/waline%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/">#Waline评论系统</a>
+  
+  <a href="http://localhost:1313/blog/vercel/">#Vercel</a>
+  
+</p>
+
+  </main>
+  <footer>Made with <a href="https://github.com/janraasch/hugo-bearblog/">Hugo ʕ•ᴥ•ʔ Bear</a>
+</footer>
+
+  
+</body>
+
+</html>

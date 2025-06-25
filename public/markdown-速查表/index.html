@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="http://localhost:1313/images/favicon.png" />
+<title>Markdown-速查表 | 喵落阁</title>
+<meta name="title" content="Markdown-速查表" />
+<meta name="description" content="记录 Markdown 的用法，便于查找。" />
+<meta name="keywords" content="markdown,速查表," />
+
+
+<meta property="og:url" content="http://localhost:1313/markdown-%E9%80%9F%E6%9F%A5%E8%A1%A8/">
+  <meta property="og:site_name" content="喵落阁">
+  <meta property="og:title" content="Markdown-速查表">
+  <meta property="og:description" content="记录 Markdown 的用法，便于查找。">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="blog">
+    <meta property="article:published_time" content="2025-02-11T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-02-11T00:00:00+00:00">
+    <meta property="article:tag" content="Markdown">
+    <meta property="article:tag" content="速查表">
+    <meta property="og:image" content="http://localhost:1313/images/share.png">
+
+
+
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="http://localhost:1313/images/share.png">
+  <meta name="twitter:title" content="Markdown-速查表">
+  <meta name="twitter:description" content="记录 Markdown 的用法，便于查找。">
+
+
+
+
+  <meta itemprop="name" content="Markdown-速查表">
+  <meta itemprop="description" content="记录 Markdown 的用法，便于查找。">
+  <meta itemprop="datePublished" content="2025-02-11T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2025-02-11T00:00:00+00:00">
+  <meta itemprop="wordCount" content="152">
+  <meta itemprop="image" content="http://localhost:1313/images/share.png">
+  <meta itemprop="keywords" content="Markdown,速查表">
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  <style>
+  :root {
+    --width: 720px;
+    --font-main: Verdana, sans-serif;
+    --font-secondary: Verdana, sans-serif;
+    --font-scale: 1em;
+    --background-color: #fff;
+    --heading-color: #222;
+    --text-color: #444;
+    --link-color: #3273dc;
+    --visited-color: #8b6fcb;
+    --code-background-color: #f2f2f2;
+    --code-color: #222;
+    --blockquote-color: #222;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --background-color: #01242e;
+      --heading-color: #eee;
+      --text-color: #ddd;
+      --link-color: #8cc2dd;
+      --visited-color: #8b6fcb;
+      --code-background-color: #000;
+      --code-color: #ddd;
+      --blockquote-color: #ccc;
+    }
+  }
+
+  body {
+    font-family: var(--font-secondary);
+    font-size: var(--font-scale);
+    margin: auto;
+    padding: 20px;
+    max-width: var(--width);
+    text-align: left;
+    background-color: var(--background-color);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+    color: var(--text-color);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-main);
+    color: var(--heading-color);
+  }
+
+  a {
+    color: var(--link-color);
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  nav a {
+    margin-right: 8px;
+  }
+
+  strong,
+  b {
+    color: var(--heading-color);
+  }
+
+  button {
+    margin: 0;
+    cursor: pointer;
+  }
+
+  time {
+    font-family: monospace;
+    font-style: normal;
+    font-size: 15px;
+  }
+
+  main {
+    line-height: 1.6;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  hr {
+    border: 0;
+    border-top: 1px dashed;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  code {
+    font-family: monospace;
+    padding: 2px;
+    background-color: var(--code-background-color);
+    color: var(--code-color);
+    border-radius: 3px;
+  }
+
+  blockquote {
+    border-left: 1px solid #999;
+    color: var(--code-color);
+    padding-left: 20px;
+    font-style: italic;
+  }
+
+  footer {
+    padding: 25px 0;
+    text-align: center;
+  }
+
+  .title:hover {
+    text-decoration: none;
+  }
+
+  .title h1 {
+    font-size: 1.5em;
+  }
+
+  .inline {
+    width: auto !important;
+  }
+
+  .highlight,
+  .code {
+    padding: 1px 15px;
+    background-color: var(--code-background-color);
+    color: var(--code-color);
+    border-radius: 3px;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    overflow-x: auto;
+  }
+
+   
+  ul.blog-posts {
+    list-style-type: none;
+    padding: unset;
+  }
+
+  ul.blog-posts li {
+    display: flex;
+  }
+
+  ul.blog-posts li span {
+    flex: 0 0 130px;
+  }
+
+  ul.blog-posts li a:visited {
+    color: var(--visited-color);
+  }
+
+</style>
+
+</head>
+
+<body>
+  <header><a href="/" class="title">
+  <h2>喵落阁</h2>
+</a>
+<nav>
+<a href="/">Home</a>
+
+<a href="/friends/">Friends</a>
+
+<a href="/microblogs/">microblogs</a>
+
+<a href="/blog/">Blog</a>
+
+</nav>
+</header>
+  <main>
+
+<h1>Markdown-速查表</h1>
+<p>
+  <i>
+    <time datetime='2025-02-11'>
+      11 Feb, 2025
+    </time>
+  </i>
+</p>
+
+<content>
+  <blockquote>
+<p>原文位置: <a href="https://markdown.com.cn/cheat-sheet.html#%E6%80%BB%E8%A7%88">https://markdown.com.cn/cheat-sheet.html#%E6%80%BB%E8%A7%88</a></p></blockquote>
+<h1 id="总览">总览</h1>
+<p>Markdown 速查表提供了所有 <strong>Markdown</strong>
+语法元素的基本解释。如果你想了解某些语法元素的更多信息，请参阅更详细的
+<strong>基本语法</strong> 和 <strong>扩展语法</strong>.</p>
+<h2 id="基本语法">基本语法</h2>
+<p>这些是 <strong>John Gruber</strong> 的原始设计文档中列出的元素。所有 <strong>Markdown</strong>
+应用程序都支持这些元素。</p>
+<table>
+  <thead>
+      <tr>
+          <th>元素</th>
+          <th>Markdown 语法</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>标题（Heading）</td>
+          <td># H1 一级标题<br> ## H2 二级标题<br> ### H3 三级标题</td>
+      </tr>
+      <tr>
+          <td>粗体（Bold）</td>
+          <td>**bold text**</td>
+      </tr>
+      <tr>
+          <td>斜体（Italic）</td>
+          <td>*italicized text*</td>
+      </tr>
+      <tr>
+          <td>引用块（Blockquote）</td>
+          <td>&gt; blockquote</td>
+      </tr>
+      <tr>
+          <td>有序列表（Ordered List）</td>
+          <td>1. First item<br> 2. Second item<br> 3. Third item</td>
+      </tr>
+      <tr>
+          <td>无序列表（Unordered List）</td>
+          <td>- First item<br> - Second item<br> - Third item</td>
+      </tr>
+      <tr>
+          <td>代码（Code）</td>
+          <td>`code`</td>
+      </tr>
+      <tr>
+          <td>分隔线（Horizontal Rule）</td>
+          <td><code>---</code></td>
+      </tr>
+      <tr>
+          <td>链接（Link）</td>
+          <td>[title](<a href="https://www.example.com">https://www.example.com</a>)</td>
+      </tr>
+      <tr>
+          <td>图片（Image）</td>
+          <td>![alt text](image.jpg)</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="扩展语法">扩展语法</h2>
+<p>这些元素通过添加额外的功能扩展了基本语法。但是，并非所有 <strong>Markdown</strong>
+应用程序都支持这些元素。</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: center">元素</th>
+          <th style="text-align: left">Markdown 语法</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center">表格（Table）</td>
+          <td style="text-align: left"><code>| Syntax | Description |</code><br><code>| -----------  |  -----------  |</code><br><code>| Header  |  Title  |</code><br><code>| Paragraph | Text |</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: center">代码块（Fenced Code Block）</td>
+          <td style="text-align: left"><code>```</code><br><code>{</code><br><code>&quot;firstName&quot;: &quot;John&quot;,</code><br><code>&quot;lastName&quot;: &quot;Smith&quot;,</code><br/><code>&quot;age&quot;: 25</code><br><code>}</code><br><code>```</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: center">脚注（Footnote）</td>
+          <td style="text-align: left">Here’s a sentence with a footnote. <code>[^1]</code><br/><code>[^1]</code>: This is the footnote.</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">标题编号（Heading ID）</td>
+          <td style="text-align: left">### My Great Heading {#custom-id}</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">定义列表（Definition List）</td>
+          <td style="text-align: left">term<br/>: definition</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">任务列表（Task List）</td>
+          <td style="text-align: left"><code>- [x] Write the press release</code><br/><code>- [ ] Update the website</code><br/><code>- [ ] Contact the media</code></td>
+      </tr>
+  </tbody>
+</table>
+
+  <script src="https://giscus.app/client.js"
+        data-repo="Kemeow815/kemiao-hugo-blog-bear"
+        data-repo-id="R_kgDOPBCS9A"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOPBCS9M4Cr7KS"
+        data-mapping="title"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="preferred_color_scheme"
+        data-lang="zh-CN"
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async>
+</script>
+
+<script>
+    function loadGiscus() {
+      const theme = localStorage.getItem('theme') === 'dark' ? 'dark' : 'light';
+      const giscus = document.createElement('script');
+      giscus.setAttribute('data-theme', theme);
+      
+    }
+    window.addEventListener('DOMContentLoaded', loadGiscus);
+  </script> 
+</content>
+<p>
+  
+  <a href="http://localhost:1313/blog/markdown/">#Markdown</a>
+  
+  <a href="http://localhost:1313/blog/%E9%80%9F%E6%9F%A5%E8%A1%A8/">#速查表</a>
+  
+</p>
+
+  </main>
+  <footer>Made with <a href="https://github.com/janraasch/hugo-bearblog/">Hugo ʕ•ᴥ•ʔ Bear</a>
+</footer>
+
+  
+</body>
+
+</html>

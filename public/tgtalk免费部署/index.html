@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="http://localhost:1313/images/favicon.png" />
+<title>tgtalk免费部署 | 喵落阁</title>
+<meta name="title" content="tgtalk免费部署" />
+<meta name="description" content="一个基于 Cloudflare Workers 的 tg 频道消息说说。" />
+<meta name="keywords" content="tgtalk,Cloudflare Workers," />
+
+
+<meta property="og:url" content="http://localhost:1313/tgtalk%E5%85%8D%E8%B4%B9%E9%83%A8%E7%BD%B2/">
+  <meta property="og:site_name" content="喵落阁">
+  <meta property="og:title" content="tgtalk免费部署">
+  <meta property="og:description" content="一个基于 Cloudflare Workers 的 tg 频道消息说说。">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="blog">
+    <meta property="article:published_time" content="2025-05-04T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-05-04T00:00:00+00:00">
+    <meta property="article:tag" content="Tgtalk">
+    <meta property="article:tag" content="Cloudflare Workers">
+    <meta property="og:image" content="http://localhost:1313/images/share.png">
+
+
+
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="http://localhost:1313/images/share.png">
+  <meta name="twitter:title" content="tgtalk免费部署">
+  <meta name="twitter:description" content="一个基于 Cloudflare Workers 的 tg 频道消息说说。">
+
+
+
+
+  <meta itemprop="name" content="tgtalk免费部署">
+  <meta itemprop="description" content="一个基于 Cloudflare Workers 的 tg 频道消息说说。">
+  <meta itemprop="datePublished" content="2025-05-04T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2025-05-04T00:00:00+00:00">
+  <meta itemprop="wordCount" content="38">
+  <meta itemprop="image" content="http://localhost:1313/images/share.png">
+  <meta itemprop="keywords" content="Tgtalk,Cloudflare Workers">
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  <style>
+  :root {
+    --width: 720px;
+    --font-main: Verdana, sans-serif;
+    --font-secondary: Verdana, sans-serif;
+    --font-scale: 1em;
+    --background-color: #fff;
+    --heading-color: #222;
+    --text-color: #444;
+    --link-color: #3273dc;
+    --visited-color: #8b6fcb;
+    --code-background-color: #f2f2f2;
+    --code-color: #222;
+    --blockquote-color: #222;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --background-color: #01242e;
+      --heading-color: #eee;
+      --text-color: #ddd;
+      --link-color: #8cc2dd;
+      --visited-color: #8b6fcb;
+      --code-background-color: #000;
+      --code-color: #ddd;
+      --blockquote-color: #ccc;
+    }
+  }
+
+  body {
+    font-family: var(--font-secondary);
+    font-size: var(--font-scale);
+    margin: auto;
+    padding: 20px;
+    max-width: var(--width);
+    text-align: left;
+    background-color: var(--background-color);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+    color: var(--text-color);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-main);
+    color: var(--heading-color);
+  }
+
+  a {
+    color: var(--link-color);
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  nav a {
+    margin-right: 8px;
+  }
+
+  strong,
+  b {
+    color: var(--heading-color);
+  }
+
+  button {
+    margin: 0;
+    cursor: pointer;
+  }
+
+  time {
+    font-family: monospace;
+    font-style: normal;
+    font-size: 15px;
+  }
+
+  main {
+    line-height: 1.6;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  hr {
+    border: 0;
+    border-top: 1px dashed;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  code {
+    font-family: monospace;
+    padding: 2px;
+    background-color: var(--code-background-color);
+    color: var(--code-color);
+    border-radius: 3px;
+  }
+
+  blockquote {
+    border-left: 1px solid #999;
+    color: var(--code-color);
+    padding-left: 20px;
+    font-style: italic;
+  }
+
+  footer {
+    padding: 25px 0;
+    text-align: center;
+  }
+
+  .title:hover {
+    text-decoration: none;
+  }
+
+  .title h1 {
+    font-size: 1.5em;
+  }
+
+  .inline {
+    width: auto !important;
+  }
+
+  .highlight,
+  .code {
+    padding: 1px 15px;
+    background-color: var(--code-background-color);
+    color: var(--code-color);
+    border-radius: 3px;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    overflow-x: auto;
+  }
+
+   
+  ul.blog-posts {
+    list-style-type: none;
+    padding: unset;
+  }
+
+  ul.blog-posts li {
+    display: flex;
+  }
+
+  ul.blog-posts li span {
+    flex: 0 0 130px;
+  }
+
+  ul.blog-posts li a:visited {
+    color: var(--visited-color);
+  }
+
+</style>
+
+</head>
+
+<body>
+  <header><a href="/" class="title">
+  <h2>喵落阁</h2>
+</a>
+<nav>
+<a href="/">Home</a>
+
+<a href="/friends/">Friends</a>
+
+<a href="/microblogs/">microblogs</a>
+
+<a href="/blog/">Blog</a>
+
+</nav>
+</header>
+  <main>
+
+<h1>tgtalk免费部署</h1>
+<p>
+  <i>
+    <time datetime='2025-05-04'>
+      04 May, 2025
+    </time>
+  </i>
+</p>
+
+<content>
+  <h2 id="部署-api">部署 API</h2>
+<p>访问 <a href="https://gist.github.com/FloatSheep/55db67d9e8148149ebbcb0f9f6b0d901">Gist</a> 并获取其中所有代码</p>
+<blockquote>
+<p>需要注意，本 API Worker 脚本基于 ChenYFan 修改，包含了本项目需要使用的功能，请勿随意更改脚本内容
+TGTalker-Frontend V2 的 API 不兼容 V1</p></blockquote>
+<p>进入 <a href="https://dash.cloudflare.com">Cloudflare 仪表盘</a></p>
+<p>选择创建应用程序 -&gt; 创建 Worker -&gt; 修改名称（部署）-&gt; 编辑代码</p>
+<p>在其中粘贴你复制的所有代码，并且修改 ChannelName 为你的频道名称，部署并访问 Worker 查看是否能正确返回内容</p>
+<p>接着你可以为你的 Worker 绑定一个域名</p>
+<p><img src="https://cdn.jsdelivr.net/gh/kmfx/tuchuang@main/img/202505042340004.png" alt="">
+<img src="https://cdn.jsdelivr.net/gh/kmfx/tuchuang@main/img/202505042340138.png" alt="">
+<img src="https://cdn.jsdelivr.net/gh/kmfx/tuchuang@main/img/202505042340963.png" alt=""></p>
+<p>保存，然后将你绑定的域名填入配置中的 api 项即可</p>
+
+  <script src="https://giscus.app/client.js"
+        data-repo="Kemeow815/kemiao-hugo-blog-bear"
+        data-repo-id="R_kgDOPBCS9A"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOPBCS9M4Cr7KS"
+        data-mapping="title"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="preferred_color_scheme"
+        data-lang="zh-CN"
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async>
+</script>
+
+<script>
+    function loadGiscus() {
+      const theme = localStorage.getItem('theme') === 'dark' ? 'dark' : 'light';
+      const giscus = document.createElement('script');
+      giscus.setAttribute('data-theme', theme);
+      
+    }
+    window.addEventListener('DOMContentLoaded', loadGiscus);
+  </script> 
+</content>
+<p>
+  
+  <a href="http://localhost:1313/blog/tgtalk/">#Tgtalk</a>
+  
+  <a href="http://localhost:1313/blog/cloudflare-workers/">#Cloudflare Workers</a>
+  
+</p>
+
+  </main>
+  <footer>Made with <a href="https://github.com/janraasch/hugo-bearblog/">Hugo ʕ•ᴥ•ʔ Bear</a>
+</footer>
+
+  
+</body>
+
+</html>
