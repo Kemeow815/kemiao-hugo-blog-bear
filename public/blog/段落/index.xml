@@ -10,10 +10,10 @@
     <lastBuildDate>Thu, 13 Feb 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://blog.kemiaosw.top/blog/%E6%AE%B5%E8%90%BD/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Markdowm 段落语法</title>
-      <link>https://blog.kemiaosw.top/markdowm-%E6%AE%B5%E8%90%BD%E8%AF%AD%E6%B3%95/</link>
+      <title>Markdown 段落语法</title>
+      <link>https://blog.kemiaosw.top/markdown-%E6%AE%B5%E8%90%BD%E8%AF%AD%E6%B3%95/</link>
       <pubDate>Thu, 13 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>https://blog.kemiaosw.top/markdowm-%E6%AE%B5%E8%90%BD%E8%AF%AD%E6%B3%95/</guid>
+      <guid>https://blog.kemiaosw.top/markdown-%E6%AE%B5%E8%90%BD%E8%AF%AD%E6%B3%95/</guid>
       <description>&lt;blockquote&gt;&#xA;&lt;p&gt;原文位置: &lt;a href=&#34;https://markdown.com.cn/basic-syntax/paragraphs.html&#34;&gt;https://markdown.com.cn/basic-syntax/paragraphs.html&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;h2 id=&#34;markdown-段落&#34;&gt;Markdown 段落&lt;/h2&gt;&#xA;&lt;p&gt;要创建段落，请使用空白行将一行或多行文本进行分隔。&lt;/p&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;Markdown语法&lt;/th&gt;&#xA;          &lt;th&gt;HTML&lt;/th&gt;&#xA;          &lt;th&gt;预览效果&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;code&gt;I really like using Markdown.&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;&amp;lt;p&amp;gt;I really like using Markdown.&amp;lt;/p&amp;gt;&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;p&gt;I really like using Markdown.&lt;/p&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;code&gt;I think I&#39;ll use it to format all of my documents from now on.&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;&amp;lt;p&amp;gt;I think I&#39;ll use it to format all of my documents from now on.&amp;lt;/p&amp;gt;&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;p&gt;I think I&amp;rsquo;ll use it to format all of my documents from now on.&lt;/p&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;h2 id=&#34;段落paragraph用法的最佳实践&#34;&gt;段落（Paragraph）用法的最佳实践&lt;/h2&gt;&#xA;&lt;p&gt;不要用空格（spaces）或制表符（ tabs）缩进段落。&lt;/p&gt;</description>
     </item>
   </channel>
